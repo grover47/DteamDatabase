@@ -14,7 +14,7 @@ public class ImportCsv {
 
 	private static void readCsv() {
 
-		try (CSVReader reader = new CSVReader(new FileReader("//Users//charliegrover//Desktop//Reading.csv"), ',');
+		try (CSVReader reader = new CSVReader(new FileReader("C://Users//priya//Desktop//Reading.csv"), ',');
 				Connection connection = DBConnection.getConnection();) {
 			String insertQuery = "Insert into diabetic_dashboard_data.Reading (UserID,ReadingDate,TimeOfDayID,BloodGlucose,InsulinUnits) values (?,?,?,?,?)";
 			PreparedStatement pstmt = connection.prepareStatement(insertQuery);
@@ -47,7 +47,7 @@ public class ImportCsv {
 	private static void readCsvUsingLoad() {
 		try (Connection connection = DBConnection.getConnection()) {
 
-			String loadQuery = "LOAD DATA LOCAL INFILE '" + "//Users//charliegrover//Desktop//Reading.csv"
+			String loadQuery = "LOAD DATA LOCAL INFILE '" + "C://Users//priya//Desktop//Reading.csv"
 					+ "' INTO TABLE diabetic_dashboard_data.Reading FIELDS TERMINATED BY ','"
 					+ " LINES TERMINATED BY '\n' (UserID,ReadingDate,TimeOfDayID,BloodGlucose,InsulinUnits) ";
 			System.out.println(loadQuery);

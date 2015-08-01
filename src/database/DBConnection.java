@@ -11,7 +11,7 @@ public class DBConnection
 		{
 				Class.forName("com.mysql.jdbc.Driver");
 
-				Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:8889/diabetic_dashboard_data", "root", "root");
+				Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/diabetic_dashboard_data", "root", "password");
 
 				return connection;
 		}
